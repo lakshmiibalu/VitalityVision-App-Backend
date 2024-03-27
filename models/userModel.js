@@ -14,6 +14,38 @@ const userSchema = mongoose.Schema(
             type:String,
             required : true
         },
+        mobileno :{
+            type:String,
+            required : true
+        },
+        address : {
+            type:String,
+            required : true
+        }, 
+        idProof :{
+            type:String,
+            required : true
+        },
+        idNumber :{
+            type:String,
+            required : true
+        },
+        gender :{
+            type:String,
+            required : true
+        },
+        bloodGroup : {
+            type:String,
+            required : true
+        },
+        height :{
+            type:String,
+            required : true
+        },
+        weight :{
+            type:String,
+            required : true
+        },
         password :{
             type:String,
             required : true
