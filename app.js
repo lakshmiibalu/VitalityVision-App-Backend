@@ -7,6 +7,7 @@ const app = express()
 
 const userRoute = require("./controllers/userRoute")
 const diabeticDocterRoute = require("./controllers/diabeticDoctorRoute")
+const liverDocterRoute = require("./controllers/liverDoctorRoute")
 
 //middleware
 app.use(express.json())
@@ -19,6 +20,7 @@ mongoose.connect("mongodb+srv://Lakshmi:ZEPH26YR@cluster0.gs9xdes.mongodb.net/Vi
 
 app.use("/api/user",userRoute)
 app.use("/api/diabetic",diabeticDocterRoute)
+app.use("/api/liver",liverDocterRoute)
 
 app.listen(3001,()=>{
     console.log("Server Running")
