@@ -17,5 +17,11 @@ router.post("/addDiabeticDoc",async(req,res)=>{
 
 })
 
+router.get("/viewdiabeticDoc",async(req,res)=>{
+
+    let data = await diabeticDoctorModel.find()
+    res.json(data)
+})
+
 
 module.exports = router
