@@ -24,4 +24,14 @@ router.get("/viewdiabeticDoc",async(req,res)=>{
 })
 
 
+router.post("/deletediabieticDoc",async(req,res)=>{
+    console.log(req.body)
+    let {id} = req.body
+    console.log(id)
+    let data = await diabeticDoctorModel.deleteOne({_id:id})
+    res.json({
+        status:"success"
+    })
+})
+
 module.exports = router
