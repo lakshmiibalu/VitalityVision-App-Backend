@@ -82,4 +82,49 @@ router.post("/login",async(req,res)=>{
 })
 
 
+router.post("/userprofile", async (req, res) => {
+
+            let input = req.body
+            let userId = req.body.userId // Assuming you send the user's object ID as userId in the request body
+            
+
+            try {
+                // Find the user profile by ID
+               let data = await userModel.findById(userId)
+                
+                if (!data) {
+                    return res.json({
+                        status: "Invalid user"
+                    })
+                } else {
+                    // Prepare response data
+                    const responseData = {
+                        name: data.name,
+                        address: data.address,
+                        weight: data.weight,
+                        height: data.height,
+                        idproof: data.idProof,
+                        emailid: data.email,
+                        contactno: data.mobileno,
+                        dob: data.dob,
+                        idNumber: data.idNumber,
+                        gender: data.gender,
+                        bloodGroup: data.bloodGroup,
+                        userName: data.userName,
+
+                    }
+        
+                    console.log(responseData)
+        
+                    return res.json(responseData)
+                }
+            } catch (error) {
+                console.error('Error fetching user profile:', error)
+                return res.status(500).json({
+                    status: "Internal Server Error"
+                })
+            }
+        })
+
+
 module.exports = router
