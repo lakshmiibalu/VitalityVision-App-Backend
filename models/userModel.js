@@ -18,6 +18,10 @@ const userSchema = mongoose.Schema(
             type:String,
             required : true
         },
+        dob :{
+            type:String,
+            required:true
+        },
         address : {
             type:String,
             required : true
