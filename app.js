@@ -11,6 +11,7 @@ const liverDocterRoute = require("./controllers/liverDoctorRoute")
 const record = require("./controllers/recordData")
 const diet = require("./controllers/dietRoute")
 
+
 //middleware
 app.use(express.json())
 app.use(cors())
@@ -25,6 +26,7 @@ app.use("/api/diabetic",diabeticDocterRoute)
 app.use("/api/liver",liverDocterRoute)
 app.use("/api/healthrecord",record)
 app.use("/api/food",diet)
+
 
 app.listen(3001,()=>{
     console.log("Server Running")
