@@ -2,7 +2,12 @@ const mongoose = require("mongoose")
 
 const recordSchema = mongoose.Schema(
     {
-        Date : {
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'users',
+            required: true
+        },
+        recordDate : {
             type:Date,
             default:Date.now
 
