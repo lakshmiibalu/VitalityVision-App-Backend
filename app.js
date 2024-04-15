@@ -10,6 +10,7 @@ const diabeticDocterRoute = require("./controllers/diabeticDoctorRoute")
 const liverDocterRoute = require("./controllers/liverDoctorRoute")
 const record = require("./controllers/recordData")
 const diet = require("./controllers/dietRoute")
+const doctor = require("./controllers/doctorsRoute")
 
 
 //middleware
@@ -26,6 +27,7 @@ app.use("/api/diabetic",diabeticDocterRoute)
 app.use("/api/liver",liverDocterRoute)
 app.use("/api/healthrecord",record)
 app.use("/api/food",diet)
+app.use("/api/doctor",doctor)
 
 
 app.listen(3001,()=>{
